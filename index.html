@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.accordian {
+    width: 460px;
+    border: 1px solid black;
+}
+
+.accordian-tittle {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.accordian-tittle:hover{
+  background-color: grey;
+}
+
+.accordian-content {
+    background-color: grey;
+    padding: 10px;
+    display: none;
+}
+
+.accordian-item {
+    margin-bottom: 10px;
+}
+.accordian-item.active .accordian-content{
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="accordian">
+    <div class="accordian-item">
+      <div class="accordian-tittle">Accordian Title 1</div>
+      <div class="accordian-content">Accordian content 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates expedita adipisci quasi, odit nam nulla et, porro facere totam laborum repellendus aperiam molestiae. Officia, minus delectus. Nisi, qui id?</div>
+    </div>
+    <div class="accordian-item">
+      <div class="accordian-tittle">Accordian Title 2</div>
+      <div class="accordian-content">Accordian content 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates expedita adipisci quasi, odit nam nulla et, porro facere totam laborum repellendus aperiam molestiae. Officia, minus delectus. Nisi, qui id?</div>
+    </div>
+    <div class="accordian-item">
+      <div class="accordian-tittle">Accordian Title 3</div>
+      <div class="accordian-content">Accordian content 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates expedita adipisci quasi, odit nam nulla et, porro facere totam laborum repellendus aperiam molestiae. Officia, minus delectus. Nisi, qui id?</div>
+    </div>
+    <div class="accordian-item">
+      <div class="accordian-tittle">Accordian Title 4</div>
+      <div class="accordian-content">Accordian content 4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates expedita adipisci quasi, odit nam nulla et, porro facere totam laborum repellendus aperiam molestiae. Officia, minus delectus. Nisi, qui id?</div>
+    </div>
+    <div class="accordian-item">
+      <div class="accordian-tittle">Accordian Title 5</div>
+      <div class="accordian-content">Accordian content 5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates expedita adipisci quasi, odit nam nulla et, porro facere totam laborum repellendus aperiam molestiae. Officia, minus delectus. Nisi, qui id?</div>
+    </div>
+  </div>
+
+
+  <script>
+    var accordinItems = document.querySelectorAll(".accordian-item");
+
+    accordinItems.forEach(items => {
+      var title = items.querySelector(".accordian-tittle");
+      var content = items.querySelector(".accordian-content");
+      
+      title.addEventListener("click",function(){
+        for(var i =0; i < accordinItems.length; i++){
+          if(accordinItems[i] != items){
+            accordinItems[i].classList.remove('active')
+          }else{
+            items.classList.toggle("active");
+          }
+        }
+        
+      })
+    })
+  </script>
+
+
+
+  
+</body>
+</html>
